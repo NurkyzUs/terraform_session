@@ -1,15 +1,29 @@
-resource "aws_security_group" "first_sg" {
-  name        = "session-5"
-  description = "This is for testing"
+resource "aws_security_group" "web" {
+  name        = "${var.env}-web"
+  description = "This is for web instance, launch config"
 
-}
+  ingress {
+    description = "This is for SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-resource "aws_security_group_rule" "ingress_sg" {
-  count             = 5
-  type              = "ingress"
-  protocol          = "tcp"
-  security_group_id = aws_security_group.first_sg.id
-  from_port         = element(var.sg_tcp_ports, count.index)
-  to_port           = element(var.sg_tcp_ports, count.index)
-  cidr_blocks       = [element(var.sg_tcp_ports_cidr, count.index)]
+  ingress {
+    description = "This is for Apache"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    description = "ALL PORTS and PROTOCOLS"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
 }
