@@ -8,6 +8,6 @@ variable "instance_type" {
 
 variable "env" {
     type = string
-    default = "dev"
+    default = "qa"
     description = "This is a variable for environments"
 }
