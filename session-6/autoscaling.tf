@@ -7,4 +7,11 @@ resource "aws_autoscaling_group" "web_asg" {
     // health_check_type = "ELB"
     launch_configuration = aws_launch_configuration.web.name
     vpc_zone_identifier = data.aws_subnet_ids.default.ids
+
+    instance_refresh {
+    strategy = "Rolling"
+    preference = {
+      min_healhty_percentage = 50
+    }
+  }
 }
