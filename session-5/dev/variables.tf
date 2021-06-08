@@ -11,3 +11,11 @@ variable "env" {
     default = "dev"
     description = "This is a variable for environments"
 }
+
+variable "sg_tcp_ports" {
+    type = list(string)
+}
+
+variable "sg_tcp_ports_cidr" {
+    type = list(string)
+}
