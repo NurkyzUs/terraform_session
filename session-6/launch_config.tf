@@ -15,3 +15,4 @@ resource "aws_launch_configuration" "web-1" {
   key_name        = aws_key_pair.terraform_server.key_name
   user_data = data.template_file.user_data.rendered
 }
+
