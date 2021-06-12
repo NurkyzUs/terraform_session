@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "web" {
   instance_type   = var.instance_type
   security_groups = [aws_security_group.web.id]
   key_name        = aws_key_pair.terraform_server.key_name
-  user_data = data.template_file.user_data.rendered
+  user_data       = data.template_file.user_data.rendered
 }
 
 resource "aws_launch_configuration" "web-1" {
@@ -13,6 +13,6 @@ resource "aws_launch_configuration" "web-1" {
   instance_type   = var.instance_type
   security_groups = [aws_security_group.web.id]
   key_name        = aws_key_pair.terraform_server.key_name
-  user_data = data.template_file.user_data.rendered
+  user_data       = data.template_file.user_data.rendered
 }
 
