@@ -32,7 +32,7 @@ data "terraform_remote_state" "rds_instance" {
   backend = "s3"
   config = {
     bucket = "terraform-may-nurkyz"
-    key = "session-7/backend.tfstate"
+    key = "session-7/backend.tfsate"
     region = "us-east-1"
   }
 }
