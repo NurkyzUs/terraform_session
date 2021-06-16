@@ -45,6 +45,7 @@ provisioner "remote-exec" {
 //   }
 // }
 
+
 ### key pair for instance
 resource "aws_key_pair" "terraform-key" {
   key_name = "terraform-server"
