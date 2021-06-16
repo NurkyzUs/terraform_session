@@ -13,5 +13,5 @@ output "rds_db_password" {
 output "rds_db_endpoint" { 
     value = data.terraform_remote_state.rds_instance.outputs.rds_db_endpoint
 }
-
+ 
 
