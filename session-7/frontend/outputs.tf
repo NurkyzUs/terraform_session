@@ -7,10 +7,10 @@ output "rds_db_name" {
 }
 
 output "rds_db_password" {
-    value = data.terraform_remote_state.rds_instance.outputs.rds_password
+    value = data.terraform_remote_state.rds_instance.outputs.rds_db_password
 }
 
-output "rds_db_endpoint" {
+output "rds_db_endpoint" { 
     value = data.terraform_remote_state.rds_instance.outputs.rds_db_endpoint
 }
 
