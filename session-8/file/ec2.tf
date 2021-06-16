@@ -22,7 +22,7 @@ connection {
   }
 }
 
-### remote exec
+### remote exec provisioner
 
 provisioner "remote-exec" {
   inline = [
@@ -34,6 +34,16 @@ provisioner "remote-exec" {
   ]
  }
 }
+
+// ### local exec provisioner
+
+// resource "null_resource" "local_script" {
+//   provisioner "local-exec" {
+//     commmand = <<EOF
+//     touch text.tf
+//     EOF
+//   }
+// }
 
 ### key pair for instance
 resource "aws_key_pair" "terraform-key" {
