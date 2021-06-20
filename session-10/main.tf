@@ -4,6 +4,7 @@ module "s3_module" {
 }
 
 
+
 // https://github.com/NurkyzUs/terraform_may/tree/main/modules/s3
 
 // https            = protocol
