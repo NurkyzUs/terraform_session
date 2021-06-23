@@ -1,2 +1,2 @@
 # terraform_may
-This repo is for may Terraform sessions
+This repo is for the Terraform sessions
